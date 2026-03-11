@@ -65,7 +65,7 @@ export default function HomePage() {
   const moreCount = filtered.length > 8 ? filtered.length - 8 : 0;
 
   // --- Search box inner content (shared styling, different refs) ---
-  const searchBoxInner = (ref: React.RefObject<HTMLInputElement | null>) => (
+  const searchBoxInner = (ref: React.RefObject<HTMLInputElement>) => (
     <div
       className={`flex items-center gap-3 px-5 py-4 rounded-2xl border transition-all duration-500 ${
         glassActive
