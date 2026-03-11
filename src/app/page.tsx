@@ -4,6 +4,7 @@ import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Fuse from 'fuse.js';
 import { getAllAnswers } from '@/lib/faq';
+import { basePath } from '@/lib/basePath';
 import type { FAQAnswer } from '@/lib/types';
 
 export default function HomePage() {
@@ -150,7 +151,7 @@ export default function HomePage() {
     <div
       className="min-h-screen"
       style={{
-        backgroundImage: 'url(/images/hero-bg.jpg)',
+        backgroundImage: `url(${basePath}/images/hero-bg.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center 40%',
       }}

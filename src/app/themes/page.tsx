@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getAllThemes, getAllAnswers } from '@/lib/faq';
+import { basePath } from '@/lib/basePath';
 
 const THEME_ICONS: Record<number, string> = {
   1: '🌌',  // Consciousness, Soul & Afterlife
@@ -44,7 +45,7 @@ export default function ThemesPage() {
       {/* Fixed full-screen background — image 1 (single figure, portrait crop) */}
       <div className="fixed inset-0 -z-10">
         <img
-          src="/images/themes-bg-wide.jpg"
+          src={`${basePath}/images/themes-bg-wide.jpg`}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -1,4 +1,5 @@
 import { getAllAnswers, getAnswerBySlug, getThemeByNumber } from '@/lib/faq';
+import { basePath } from '@/lib/basePath';
 import Link from 'next/link';
 import { readFile } from 'fs/promises';
 import { join } from 'path';
@@ -51,7 +52,7 @@ function markdownToHtml(md: string): string {
       const imgMatch = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)/);
       if (imgMatch) {
         const alt = imgMatch[1];
-        const src = imgMatch[2].replace(/^images\//, '/images/');
+        const src = imgMatch[2].replace(/^images\//, `${basePath}/images/`);
         html.push(`<figure class="my-8"><img src="${src}" alt="${alt}" class="w-full rounded-lg border border-cosmic-border" loading="lazy" />`);
         html.push('</figure>');
       }
@@ -119,13 +120,13 @@ export default async function AnswerPage({ params }: { params: Promise<{ slug: s
       <div className="fixed inset-0 -z-10">
         {/* Wide image (default) */}
         <img
-          src="/images/answer-bg-wide.jpg"
+          src={`${basePath}/images/answer-bg-wide.jpg`}
           alt=""
           className="hidden md:block absolute inset-0 w-full h-full object-cover"
         />
         {/* Narrow image (mobile) */}
         <img
-          src="/images/answer-bg-narrow.jpg"
+          src={`${basePath}/images/answer-bg-narrow.jpg`}
           alt=""
           className="block md:hidden absolute inset-0 w-full h-full object-cover"
         />
