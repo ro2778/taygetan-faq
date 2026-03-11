@@ -34,7 +34,7 @@ jobs:
         run: npm ci
 
       - name: Build with Next.js
-        run: npm run build
+        run: npx next build
         env:
           NEXT_PUBLIC_BASE_PATH: /taygetan-faq
 
