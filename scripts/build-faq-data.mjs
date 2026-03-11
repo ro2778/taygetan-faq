@@ -18,20 +18,20 @@ const OUTPUT_DIR = join(import.meta.dirname, '..', 'src', 'data');
 const OUTPUT_FILE = join(OUTPUT_DIR, 'faq-data.json');
 
 const THEME_NAMES = {
-  1: 'Time, Timelines & Time Travel',
-  2: 'Consciousness, Soul & Afterlife',
-  3: 'Matrix, Manifestation & Reality',
-  4: 'Metaphysics, Spirituality & Ascension',
-  5: 'Extraterrestrial Races & Religion',
-  6: 'Extraterrestrial Races (Urmah & Others)',
+  1: 'Consciousness, Soul & Afterlife',
+  2: 'Matrix, Manifestation & Reality',
+  3: 'Backdrop People, NPCs & Organic Portals',
+  4: 'Galactic Federation',
+  5: 'Human History, Religion & Ancient Civilisations',
+  6: 'Extraterrestrial Races',
   7: 'Taygetan Society, Contact & Verification',
-  8: 'Extraterrestrial Technology',
-  9: 'Earth Control & Governance',
-  10: 'Astral Entities & Paranormal',
-  11: 'Human History & Ancient Civilisations',
-  12: 'Biology, Genetics, Health & Diet',
-  13: 'Cabal, Earth Control & Current Affairs',
-  14: 'Science Critique & Nature of Universe',
+  8: 'ET Technology',
+  9: 'Starseeds & Life Guidance',
+  10: 'Astral, Entities & Spiritual Protection',
+  11: 'Cabal & Earth Control',
+  12: 'Biology, Health & Diet',
+  13: 'Metaphysics & Spirituality',
+  14: 'Science & Universe',
 };
 
 function slugify(text) {
