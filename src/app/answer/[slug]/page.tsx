@@ -1,22 +1,10 @@
 import { getAllAnswers, getAnswerBySlug, getThemeByNumber } from '@/lib/faq';
 import { basePath } from '@/lib/basePath';
 import Link from 'next/link';
-import { readFile } from 'fs/promises';
-import { join } from 'path';
 
 // Generate static params for all answers
 export function generateStaticParams() {
   return getAllAnswers().map(a => ({ slug: a.slug }));
-}
-
-/** Read the raw markdown content of the answer file */
-async function getAnswerContent(filename: string): Promise<string> {
-  const faqDir = join(process.cwd(), '..', 'FAQ answers');
-  try {
-    return await readFile(join(faqDir, filename), 'utf-8');
-  } catch {
-    return '*Answer content not available.*';
-  }
 }
 
 /** Very simple markdown to HTML — handles headings, bold, italic, paragraphs, lists */
@@ -111,7 +99,7 @@ export default async function AnswerPage({ params }: { params: Promise<{ slug: s
   }
 
   const theme = getThemeByNumber(answer.themeNumber);
-  const rawContent = await getAnswerContent(answer.filename);
+  const rawContent = answer.content || '*Answer content not available.*';
   const contentHtml = markdownToHtml(rawContent);
 
   return (

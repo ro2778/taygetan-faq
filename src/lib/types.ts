@@ -3,6 +3,7 @@ export interface FAQAnswer {
   filename: string;
   title: string;
   excerpt: string;
+  content: string;
   answerType: 'Full' | 'Short' | 'No-coverage' | 'Duplicate' | 'Unknown';
   themeNumber: number;
   themeName: string;

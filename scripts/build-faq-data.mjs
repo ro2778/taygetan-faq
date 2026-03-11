@@ -200,6 +200,7 @@ async function main() {
       filename: file,
       title,
       excerpt,
+      content,
       answerType,
       themeNumber,
       themeName,
